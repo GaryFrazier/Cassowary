@@ -12,10 +12,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(vendor)
 
+include_directories(src)
+
 find_package(OpenGL REQUIRED)
 
-
-add_executable(game src/main.cpp)
+file(GLOB_RECURSE SRC_FILES
+     "src/*.cpp"
+)
+add_executable(game ${SRC_FILES})
 
 target_link_libraries(game glfw OpenGL::GL glad)
 
