@@ -10,13 +10,12 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-
 add_subdirectory(vendor)
 
 find_package(OpenGL REQUIRED)
 
 
-add_executable(game main.cpp)
+add_executable(game src/main.cpp)
 
 target_link_libraries(game glfw OpenGL::GL glad)
 
